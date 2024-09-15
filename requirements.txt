@@ -1,0 +1,4 @@
+robotframework==7.0.1
+Faker==27.0.0
+robotframework-seleniumscreenshots==0.95
+pyyaml==6.0.2

@@ -1,0 +1,7 @@
+MENU_HOME: css:#navbar ul li a[href="/"]
+MENU_CONTAS: css:#navbar ul li.dropdown a[href="/"]
+MENU_CONTAS_ADICIONAR: css:#navbar ul li ul.dropdown-menu a[href="/addConta"]
+MENU_CONTAS_LISTAR: css:#navbar ul li ul.dropdown-menu a[href="/contas"]
+MENU_MOVIMENTACAO: css:#navbar ul li a[href="/movimentacao"]
+MENU_RESUMO_MENSAL: css:#navbar ul li a[href="/extrato"]
+MENU_SAIR: css:#navbar ul li a[href="/logout"]
