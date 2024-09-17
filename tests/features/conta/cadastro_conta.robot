@@ -13,9 +13,9 @@ Cadastro de conta com sucesso
     Quando adicionar usando dados válidos
     Então a mensagem de conta adicionada com sucesso é mostrada
 
-# Fazer
-#Adicionar uma conta de mesmo nome
-#    Dado que exista uma conta já cadastrada
-#    E a página de adicionar uma conta está aberta
-#    Quando adicionar outra conta usando o nome de uma já cadastrada
-#    Então a mensagem de que existe outra conta de mesmo nome é mostrada
+Adicionar uma conta de mesmo nome
+    [Tags]    conta-existente
+    Dado que exista uma conta já cadastrada
+    E que a página de adicionar uma conta está aberta
+    Quando adicionar outra conta usando o nome de uma já cadastrada
+    Então a mensagem de que existe outra conta de mesmo nome é mostrada
