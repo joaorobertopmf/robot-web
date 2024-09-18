@@ -30,5 +30,5 @@ Gerar Massa de usuário
 
 Gerar Massa de conta
     ${numero_aleatorio}=    FakerBR.Random Number    digits=10    fix_len=true
-    ${conta_aleatoria}=       Set Variable    Conta - ${numero_aleatorio}
-    Set Suite Variable    ${CONTA_NOME}    ${conta_aleatoria}
+    ${conta_aleatoria}=     Set Variable    Conta - ${numero_aleatorio}
+    Set Suite Variable      ${CONTA_NOME}    ${conta_aleatoria}

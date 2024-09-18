@@ -40,6 +40,5 @@ Verificar mensagem de erro
 
 Verificar mensagem de e-mail com formato inválido
     [Arguments]    ${mensagem_esperada}
-    ${mensagemValidacao}=    Get Element Attribute    
-    ...    ${LOGIN_INPUT_EMAIL}    validationMessage
+    ${mensagemValidacao}=    Get Element Attribute    ${LOGIN_INPUT_EMAIL}    validationMessage
     Should Be Equal    ${mensagemValidacao}    ${mensagem_esperada}

@@ -19,7 +19,7 @@ cadastrar usando dados válidos
     cadastro_usuario_page.Submeter formulário
 
 cadastrar com e-mail existente
-    ${email_existente}=    Set Variable    ${USUARIO}[email]
+    ${email_existente}=    Set Variable       ${USUARIO}[email]
 
     Gerar Massa de usuário
     cadastro_usuario_page.Preencher nome      ${USUARIO}[nome]

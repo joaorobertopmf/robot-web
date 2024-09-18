@@ -9,7 +9,7 @@ a página de login está aberta
 
 logar com as credenciais ${email} e ${senha}
     login_page.Preencher e-mail    ${email}
-    login_page.Preencher senha    ${senha}
+    login_page.Preencher senha     ${senha}
     login_page.Submeter formulário
 
 a mensagem de boas vindas do usuário "${nome}" é mostrada
