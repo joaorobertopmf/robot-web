@@ -26,7 +26,7 @@ Login com sucesso
 
 *** Keywords ***
 Template: Login com credenciais inválidas
-    [Arguments]    ${email}    ${senha}    @{mensagens}
+    [Arguments]    ${email}    ${senha}    @{mensagem}
     Dado a página de login está aberta
     Quando logar com as credenciais ${email} e ${senha}
-    Então a @{mensagens} de erro é mostrada
+    Então a @{mensagem} de erro é mostrada
