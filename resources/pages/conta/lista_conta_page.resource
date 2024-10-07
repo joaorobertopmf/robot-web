@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    SeleniumScreenshots
 Variables    ../../locators/conta_locators.yml
 
 *** Keywords ***
