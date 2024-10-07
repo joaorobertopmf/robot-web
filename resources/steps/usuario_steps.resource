@@ -2,7 +2,6 @@
 Resource    ../pages/usuario/cadastro_usuario_page.resource
 Resource    ../pages/usuario/login_page.resource
 Resource    ../utils/gerador_de_massa.resource
-Variables    ../data/usuario_data.yml
 
 *** Keywords ***
 que exista um usuário já cadastrado
@@ -36,4 +35,3 @@ a mensagem de e-mail já utilizado é mostrada
 Realizar cadastro
     que a página de cadastro de usuário está aberta
     cadastrar usando dados válidos
-    
