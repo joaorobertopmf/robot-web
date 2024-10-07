@@ -7,7 +7,7 @@ Resource    ../pages/usuario/login_page.resource
 
 *** Keywords ***
 Abrir navegador
-    Open Browser    about:blank    chrome    
+    Open Browser    about:blank    ${BROWSER}   
     Configurar selenium
 
 Fechar navegador
