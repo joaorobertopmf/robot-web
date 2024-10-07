@@ -4,7 +4,7 @@ on:
 
 jobs:
   test_web:
-    name: API Tests
+    name: Web Tests
     runs-on: ubuntu-latest  
 
     permissions:
