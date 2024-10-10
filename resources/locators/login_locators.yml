@@ -1,6 +1,0 @@
-LOGIN_HEADER_LOGIN: css:ul.nav.navbar-nav li a[href="/login"]
-LOGIN_HEADER_NOVO_USUARIO: css=ul.nav.navbar-nav li a[href="/cadastro"]
-LOGIN_INPUT_EMAIL: id:email
-LOGIN_INPUT_SENHA: id:senha
-LOGIN_BUTTON_ENTRAR: css:button[type="submit"]
-LOGIN_ALERT_DANGER: css:div.alert.alert-danger

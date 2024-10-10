@@ -1,4 +1,0 @@
-CONTA_INPUT_NOME: id:nome
-CONTA_BUTTON_SALVAR: css:button[type="submit"]
-CONTA_ALERT_DANGER: css:div.alert.alert-danger
-CONTA_ALERT_SUCCESS: css:div.alert.alert-success
