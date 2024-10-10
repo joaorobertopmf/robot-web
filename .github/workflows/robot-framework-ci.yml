@@ -2,6 +2,11 @@ name: Robot Framework CI
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write       # Permite que o GITHUB_TOKEN leia e escreva no conteúdo do repositório, incluindo fazer commit e push em branches
+  pages: write          # Necessário se você estiver usando GitHub Pages para publicar relatórios ou páginas estáticas
+  id-token: write       # Usado para autenticação avançada, caso necessário.
+
 jobs:
   test_web:
     name: Web Tests
