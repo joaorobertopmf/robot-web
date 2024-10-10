@@ -11,7 +11,6 @@ Acessar página de cadastro de usuário
     Wait Until Element Is Visible    ${LOGIN_HEADER_NOVO_USUARIO}
     Click Element                    ${LOGIN_HEADER_NOVO_USUARIO}    
 
-
 Preencher e-mail
     [Arguments]                      ${email}
     Wait Until Element Is Visible    ${LOGIN_INPUT_EMAIL}

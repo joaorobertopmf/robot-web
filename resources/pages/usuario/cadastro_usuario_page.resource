@@ -2,17 +2,16 @@
 Library    SeleniumLibrary
 Variables    ../../locators/usuario_locators.yml
 Resource    ../../utils/gerador_de_massa.resource
+Resource    ../../utils/common.resource
 
 *** Keywords ***
 Preencher nome
-    [Arguments]                      ${nome}
-    Wait Until Element Is Visible    ${USUARIO_INPUT_NOME}
-    Input Text                       ${USUARIO_INPUT_NOME}     ${nome}
+    [Arguments]        ${nome}
+    Preencher campo    ${USUARIO_INPUT_NOME}     ${nome}
 
 Preencher e-mail
-    [Arguments]                      ${email}
-    Wait Until Element Is Visible    ${USUARIO_INPUT_EMAIL}
-    Input Text                       ${USUARIO_INPUT_EMAIL}    ${email}
+    [Arguments]        ${email}
+    Preencher campo    ${USUARIO_INPUT_EMAIL}    ${email}
 
 Preencher senha
     [Arguments]                      ${senha}
@@ -25,20 +24,18 @@ Preencher formulário
     Preencher e-mail    ${email}
     Preencher senha     ${senha}
 
-Submeter formulário
-    Click Button    ${USUARIO_BUTTON_CADASTRAR}
+Clicar no botão cadastrar
+    Clicar no botão    ${USUARIO_BUTTON_CADASTRAR}
 
 Verificar mensagem de confirmação de cadastro
-    Wait Until Element Is Visible    ${USUARIO_ALERT_SUCESSO}
-    Element Text Should Be           ${USUARIO_ALERT_SUCESSO}    Usuário inserido com sucesso
+    Validar texto do elemento           ${USUARIO_ALERT_SUCESSO}    Usuário inserido com sucesso
 
 Verificar mensagem de e-mail já utilizado de cadastro
-    Wait Until Element Is Visible    ${USUARIO_ALERT_ERRO}
-    Element Text Should Be           ${USUARIO_ALERT_ERRO}    Endereço de email já utilizado
+    Validar texto do elemento    ${USUARIO_ALERT_ERRO}    Endereço de email já utilizado
 
 Cadastrar usuário
-    [Arguments]    ${email}=${MASSA_USUARIO}[email]    
+    [Arguments]         ${email}=${MASSA_USUARIO}[email]    
     Preencher nome      ${MASSA_USUARIO}[nome]
     Preencher e-mail    ${email}
     Preencher senha     ${MASSA_USUARIO}[senha]
-    Submeter formulário
+    Clicar no botão cadastrar
