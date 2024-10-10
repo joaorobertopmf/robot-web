@@ -1,74 +1,70 @@
 name: Robot Framework CI
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
   test_web:
     name: Web Tests
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-
-    environment:
-        name: github-pages
-        url: https://joaorobertopmf.github.io/robot-web/index.html
-      
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"  
-      
-      - name: Install python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
-      - name: install Allure command-line
+      - name: Install Allure command-line
         run: npm install -g allure-commandline
       
-      - name: Install Allure adapter for robot framework
+      - name: Install Allure adapter for Robot Framework
         run: pip install allure-robotframework
 
       - name: Check Allure version
-        run: allure --version    
-
+        run: allure --version  
+        
       - name: Run Tests
-        id: run_tests_id
-        run: robot --listener allure_robotframework:results/allure-results -d results tests
+        run: |
+          robot --listener allure_robotframework:results/allure-results --outputdir results --variable BROWSER:headlesschrome -i ativo tests
+            
+      - name: Generate the Allure Report
+        run: |
+          allure generate results/allure-results --clean -o results/allure-report
 
-      - name: Generate the report
-        if: always()  
-        run: allure generate --single-file results/allure-results --clean -o results/allure-report
-      
+      - name: Load test report history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true 
+        with:
+          ref: gh-pages # the branch used for the GitHub Pages content. 
+          path: gh-pages # an arbitrary name for a directory to which the previous data will be saved
+
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.9
+        if: always()
+        with:
+          gh_pages: gh-pages # the directory name to which the previous data was downloaded. Must be the same as the path value from the Load test reports history step.
+          allure_history: allure-history
+          allure_results: results/allure-results
+          allure_report: results/allure-report 
+
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v4
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
+
       - name: Upload Web Test Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Test Results
           path: results/
-
-      - name: Confire github pages
-        uses: actions/configure-pages@v5
-        if: always()
-
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v3
-        if: always()
-        with:
-          path: results/allure-report/
-          
-      - name: Deploy artifact to github pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        if: always()
