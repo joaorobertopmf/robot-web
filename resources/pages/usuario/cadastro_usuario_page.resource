@@ -37,8 +37,8 @@ Verificar mensagem de e-mail já utilizado de cadastro
     Element Text Should Be           ${USUARIO_ALERT_ERRO}    Endereço de email já utilizado
 
 Cadastrar usuário
-    [Arguments]    ${email}=${USUARIO}[email]    
-    Preencher nome      ${USUARIO}[nome]
+    [Arguments]    ${email}=${MASSA_USUARIO}[email]    
+    Preencher nome      ${MASSA_USUARIO}[nome]
     Preencher e-mail    ${email}
-    Preencher senha     ${USUARIO}[senha]
+    Preencher senha     ${MASSA_USUARIO}[senha]
     Submeter formulário
