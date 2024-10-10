@@ -20,7 +20,7 @@ Login com e-mail e senha vazios       ${EMPTY}             ${EMPTY}             
 Login com sucesso
     [Template]    NONE
     Dado a página de login está aberta
-    Quando logar com as credenciais ${EMAIL_CORRETO} e ${SENHA_CORRETA}
+    Quando o usuário loga com ${EMAIL_CORRETO} e ${SENHA_CORRETA}
     Então a mensagem de boas vindas do usuário "João Roberto" é mostrada
 
 
@@ -28,5 +28,5 @@ Login com sucesso
 Template: Login com credenciais inválidas
     [Arguments]    ${email}    ${senha}    @{mensagem}
     Dado a página de login está aberta
-    Quando logar com as credenciais ${email} e ${senha}
+    Quando o usuário loga com ${email} e ${senha}
     Então a @{mensagem} de erro é mostrada

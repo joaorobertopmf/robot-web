@@ -7,7 +7,7 @@ Variables    ../data/login_data.yml
 a página de login está aberta
     Acessar página de login
 
-logar com as credenciais ${email} e ${senha}
+o usuário loga com ${email} e ${senha}
     login_page.Preencher e-mail    ${email}
     login_page.Preencher senha     ${senha}
     login_page.Submeter formulário
@@ -23,4 +23,4 @@ a ${mensagens} de erro é mostrada
 
 Realizar login
     a página de login está aberta
-    logar com as credenciais ${EMAIL_CORRETO} e ${SENHA_CORRETA}
+    o usuário loga com ${EMAIL_CORRETO} e ${SENHA_CORRETA}
