@@ -1,9 +1,10 @@
 *** Settings ***
 Documentation    Este é o arquivo de configuração do selenium
-Library    SeleniumLibrary
+Library    SeleniumLibrary       
 
 *** Variables ***
-${BROWSER}=    headlesschrome
+${BROWSER}=        chrome
+${WAIT_TIME}=      10s
 
 *** Keywords ***
 Configurar selenium
