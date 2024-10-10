@@ -15,7 +15,7 @@ cadastrar usando dados válidos
     Cadastrar usuário
 
 cadastrar com e-mail existente
-    ${email_existente}=    Set Variable       ${USUARIO}[email]
+    ${email_existente}=    Set Variable       ${MASSA_USUARIO}[email]
     Gerar Massa de usuário
     Cadastrar usuário    email=${email_existente}
 

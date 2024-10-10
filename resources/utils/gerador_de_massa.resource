@@ -3,7 +3,7 @@ Library    ../../libraries/FakerBR.py
 Library    Collections
 
 *** Variables ***
-&{USUARIO}=    nome=${EMPTY}    email=${EMPTY}    senha=${EMPTY}    
+&{MASSA_USUARIO}=    nome=${EMPTY}    email=${EMPTY}    senha=${EMPTY}    
 ${CONTA_NOME}
 
 *** Keywords ***
@@ -23,7 +23,7 @@ Gerar Massa de usuário
     ${nome}=     FakerBR.Name
     ${email}=    FakerBR.Email
     ${senha}=    FakerBR.Password
-    Set To Dictionary    ${USUARIO}    
+    Set To Dictionary    ${MASSA_USUARIO}    
     ...    nome=${nome}    
     ...    email=${email}    
     ...    senha=${senha}
