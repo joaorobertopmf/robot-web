@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Variables    ../../locators/usuario_locators.yml
+Resource    ../../utils/gerador_de_massa.resource
 
 *** Keywords ***
 Preencher nome
@@ -34,3 +35,10 @@ Verificar mensagem de confirmação de cadastro
 Verificar mensagem de e-mail já utilizado de cadastro
     Wait Until Element Is Visible    ${USUARIO_ALERT_ERRO}
     Element Text Should Be           ${USUARIO_ALERT_ERRO}    Endereço de email já utilizado
+
+Cadastrar usuário
+    [Arguments]    ${email}=${USUARIO}[email]    
+    Preencher nome      ${USUARIO}[nome]
+    Preencher e-mail    ${email}
+    Preencher senha     ${USUARIO}[senha]
+    Submeter formulário
