@@ -18,12 +18,6 @@ Preencher senha
     Wait Until Element Is Visible    ${USUARIO_INPUT_SENHA}
     Input Password                   ${USUARIO_INPUT_SENHA}    ${senha}
 
-Preencher formulário
-    [Arguments]         ${nome}    ${email}    ${senha}
-    Preencher nome      ${nome}
-    Preencher e-mail    ${email}
-    Preencher senha     ${senha}
-
 Clicar no botão cadastrar
     Clicar no botão    ${USUARIO_BUTTON_CADASTRAR}
 
@@ -35,7 +29,7 @@ Verificar mensagem de e-mail já utilizado de cadastro
 
 Cadastrar usuário
     [Arguments]         ${email}=${MASSA_USUARIO}[email]    
-    Preencher nome      ${MASSA_USUARIO}[nome]
-    Preencher e-mail    ${email}
+    Preencher nome      ${MASSA_USUARIO}[nome]    
+    Preencher e-mail    ${email}    
     Preencher senha     ${MASSA_USUARIO}[senha]
     Clicar no botão cadastrar
