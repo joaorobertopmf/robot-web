@@ -1,0 +1,31 @@
+name: Called Workflow
+on:        
+  workflow_call:
+    inputs:
+      ambiente:
+        description: "Ambiente onde os testes serão executados"
+        default: "Homologação"
+        required: true
+        type: string
+  workflow_dispatch:
+    inputs:
+        ambiente:
+          description: "Ambiente onde os testes serão executados"
+          default: "xpto"
+          required: true
+          type: string
+
+permissions:
+  contents: write       # Permite que o GITHUB_TOKEN leia e escreva no conteúdo do repositório, incluindo fazer commit e push em branches
+  pages: write          # Necessário se você estiver usando GitHub Pages para publicar relatórios ou páginas estáticas
+  id-token: write       # Usado para autenticação avançada, caso necessário.
+
+jobs:
+  test_web:
+    name: Web Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Show input data
+        run: |
+            echo "Ambiente: ${{ inputs.ambiente }}"

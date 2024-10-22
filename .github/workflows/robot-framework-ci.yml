@@ -1,6 +1,6 @@
 name: Robot Framework CI
 on:
-  push:
+  #push:
   workflow_dispatch:
 
 permissions:
