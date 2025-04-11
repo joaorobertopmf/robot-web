@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    Aqui estão algumas keywords customizadas para evitar repetição de código de funções bastante usadas durante o projeto de automação
-Resource    ../config/selenium.resource         
+Resource    ../config/selenium.resource
+Resource    ../config/screencap.resource    
 
 *** Keywords ***
 Validar texto do elemento
