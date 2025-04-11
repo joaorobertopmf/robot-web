@@ -27,6 +27,6 @@ Verificar mensagem de e-mail já utilizado
     Validar texto do elemento    ${USUARIO_ALERT_ERRO}    Endereço de email já utilizado
 
 Cadastrar usuário
-    [Arguments]    ${usuario}    ${email}=${usuario.email}
+    [Arguments]    ${usuario}
     Preencher formulário de cadastro    ${usuario}
     Clicar no botão cadastrar

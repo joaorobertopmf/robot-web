@@ -29,7 +29,7 @@ Verificar mensagem de erro
     [Arguments]                     ${mensagens}
     Wait Until Element Is Visible   ${LOGIN_ALERT_DANGER}    
     
-    Set Local Variable    ${indice}    ${0}
+    ${indice}=    Set Variable    {0}
     ${alerts}=    Get WebElements    ${LOGIN_ALERT_DANGER}      
     FOR  ${alert}  IN  @{alerts}      
         ${texto_do_alert}=    Get Text    ${alert}

@@ -6,8 +6,8 @@ Resource         ../../resources/steps/login_steps.resource
 Variables        ../../resources/data/login_data.yml
 Test Template    Template: Login com credenciais inválidas
 
-Test Setup       Abrir navegador
-Test Teardown    Fechar navegador
+Test Setup       Preparar Setup
+Test Teardown    Preparar Teardown
 
 *** Test Cases ***                    EMAIL                SENHA                MENSAGEM
 Login com e-mail inválido             ${EMAIL_INCORRETO}   ${SENHA_CORRETA}     Problemas com o login do usuário    

@@ -5,8 +5,8 @@ Documentation    Aqui ficarão os testes relacionados ao cadastro de usuário
 Resource    ../../../resources/config/hooks.resource
 Resource    ../../../resources/steps/usuario_steps.resource
 
-Test Setup       Abrir navegador
-Test Teardown    Fechar navegador
+Test Setup       Preparar Setup
+Test Teardown    Preparar Teardown
 
 *** Test Cases ***
 Cadastro de usuário com sucesso
