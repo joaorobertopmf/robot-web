@@ -23,7 +23,6 @@ Login com sucesso
     Quando o usuário loga com ${EMAIL_CORRETO} e ${SENHA_CORRETA}
     Então a mensagem de boas vindas do usuário "João Roberto" é mostrada
 
-
 *** Keywords ***
 Template: Login com credenciais inválidas
     [Arguments]    ${email}    ${senha}    @{mensagem}
