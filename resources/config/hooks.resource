@@ -1,14 +1,14 @@
 *** Settings ***
-Documentation    Este é o arquivo de configuração do robot
-
-Library     SeleniumLibrary
-Resource    selenium.resource
-Resource    ../pages/usuario/login_page.resource
+Documentation    Este é o arquivo que estão os hooks utilizados nos testes
+Resource    ../utils/common.resource
 
 *** Keywords ***
-Abrir navegador
-    Open Browser    about:blank    ${BROWSER}   
-    Configurar selenium
+Preparar Setup
+    Abrir Navegador
+    Iniciar Gravação
 
-Fechar navegador
+Preparar Teardown
+    Run Keyword If Test Failed    
+    ...    Capture Page Screenshot    EMBED        
+    Parar Gravação
     Close Browser

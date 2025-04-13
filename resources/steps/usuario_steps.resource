@@ -5,22 +5,22 @@ Resource    ../pages/usuario/login_page.resource
 *** Keywords ***
 que exista um usuário já cadastrado
     Acessar página de cadastro de usuário
-    Cadastrar usuário
+    Cadastrar usuário    ${MASSA_USUARIO}
     
 que a página de cadastro de usuário está aberta
     Acessar página de cadastro de usuário
 
 cadastrar usando dados válidos
     Gerar Massa de usuário
-    Cadastrar usuário
+    Cadastrar usuário    ${MASSA_USUARIO}
 
 cadastrar com e-mail existente
     ${email_existente}=    Set Variable       ${MASSA_USUARIO}[email]
     Gerar Massa de usuário
-    Cadastrar usuário    email=${email_existente}
+    Cadastrar usuário    ${MASSA_USUARIO}
 
 a mensagem de confirmação de cadastro é mostrada    
     Verificar mensagem de confirmação de cadastro
 
 a mensagem de e-mail já utilizado é mostrada
-    Verificar mensagem de e-mail já utilizado de cadastro
+    Verificar mensagem de e-mail já utilizado
